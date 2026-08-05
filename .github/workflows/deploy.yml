@@ -1,0 +1,71 @@
+name: Deploy staging preview
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Install dependencies
+        run: npm ci
+      - name: Build static website
+        run: npm run build:pages
+        env:
+          STATIC_EXPORT: "true"
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.origin }}${{ steps.pages.outputs.base_path }}
+      - name: Encrypt board preview
+        run: >-
+          npx staticrypt out/* -r -d out
+          --salt a7c9e42f6d8130b98ac5360dfe2714b8
+          --remember 14
+          --short
+          --template-title "Federated Church Board Preview"
+          --template-instructions "This preview is private. Enter the review password shared by the church office."
+          --template-button "View preview"
+          --template-placeholder "Review password"
+          --template-error "That password is not correct."
+          --template-remember "Remember this device for 14 days"
+          --template-color-primary "#17324a"
+          --template-color-secondary "#f7f3ea"
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.PREVIEW_PASSWORD }}
+      - name: Block search indexing
+        run: node scripts/add-private-preview-meta.mjs out
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Publish preview
+        id: deployment
+        uses: actions/deploy-pages@v4
