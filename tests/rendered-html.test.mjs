@@ -14,6 +14,10 @@ test("renders the church home page", async () => {
   assert.match(html, /All Are Welcome/);
   assert.match(html, /Sundays at 10:00 AM/);
   assert.match(html, /Plan a Visit/);
+  assert.match(html, /Environmental justice/);
+  assert.match(html, /immigration status/);
+  assert.match(html, /youtube\.com\/@eldoradofederatedchurchpla3486/);
+  assert.match(html, /View the live calendar/);
   assert.match(html, /noindex/);
 });
 
@@ -27,4 +31,9 @@ test("renders every core route", async () => {
   ]) {
     assert.match(await renderedHtml(path), expected, path);
   }
+
+  assert.match(await renderedHtml("about/index.html"), /pastor-carrie-lane-2025\.jpg/);
+  assert.match(await renderedHtml("ministries/index.html"), /Board of Deacons/);
+  assert.match(await renderedHtml("ministries/index.html"), /id="congregationalcare"/);
+  assert.match(await renderedHtml("worship/index.html"), /Visit our YouTube channel/);
 });

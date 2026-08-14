@@ -11,7 +11,7 @@ const ministryGroups = [
   { id: "justice", icon: HandHeart, title: "Justice & Housing", text: "Our faith moves us toward the work of peace, inclusion, affordable housing, disaster recovery, and repair. We support Housing El Dorado and collaborate across the Western Slope.", items: ["Housing El Dorado partnership", "Reconciling Ministries", "More Light Presbyterians", "Mission connections"] },
   { id: "music", icon: Music2, title: "Music & Worship Arts", text: "Music is a spiritual practice here. Sing, ring, play, move, or help behind the scenes—experience is welcome, but curiosity is enough.", items: ["Chancel Choir", "Handbell Choir", "Praise Team", "Worship Support Team"] },
   { id: "learning", icon: BookOpen, title: "Learning & Small Groups", text: "Adults gather to study, ask hard questions, pray, create, and build lasting friendships. There is room for seasoned members and people exploring faith for the first time.", items: ["Adult education", "Federated Church Women", "Fellowship groups", "Prayer & pastoral care"] },
-  { id: "care", icon: Home, title: "Congregational Care", text: "Care continues beyond Sunday through visits, calls, prayer, practical support, and companionship during illness, grief, transition, and celebration.", items: ["Pastoral visits", "Congregational care team", "Prayer support", "Home Communion"] },
+  { id: "congregationalcare", icon: Home, title: "Board of Deacons", text: "Our deacons extend the care of the congregation beyond Sunday through visits, calls, prayer, practical support, and companionship during illness, grief, transition, and celebration.", items: ["Deacon visits", "Member care", "Prayer support", "Home Communion"] },
 ];
 
 export default function MinistriesPage() {

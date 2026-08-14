@@ -4,17 +4,23 @@ import {
   CalendarDays,
   Clock3,
   HeartHandshake,
+  Leaf,
   MapPin,
   Play,
   Radio,
   Sparkles,
+  Tv,
 } from "lucide-react";
-import { asset, church, events, ministries } from "@/lib/site";
+import { asset, church, ministries } from "@/lib/site";
 
 export default function Home() {
   return (
     <>
-      <section className="home-hero" style={{ backgroundImage: `url(${asset("/images/church-exterior.jpg")})` }}>
+      <section className="home-hero">
+        <picture className="home-hero-visual">
+          <source media="(max-width: 820px)" srcSet={asset("/images/church-rainbow-solar-portrait.jpg")} />
+          <img src={asset("/images/church-rainbow-solar.jpg")} alt="Federated Church with its rainbow welcome mural and rooftop solar panels" />
+        </picture>
         <div className="home-hero-overlay" />
         <div className="shell hero-content">
           <div className="hero-tag"><Sparkles size={16} /> A community of welcome in Placerville</div>
@@ -27,11 +33,15 @@ export default function Home() {
             <Link className="button button-ghost" href="/worship"><Play size={17} /> Watch Live / Sermons</Link>
             <Link className="button button-text-light" href="/give">Give Online <ArrowRight size={16} /></Link>
           </div>
+          <div className="hero-values" aria-label="Our commitments">
+            <span><HeartHandshake size={17} /> LGBTQIA+ affirming</span>
+            <span><Leaf size={17} /> Environmental justice</span>
+          </div>
         </div>
         <div className="hero-rail shell">
           <div><Clock3 /><span><strong>Sundays at 10:00 AM</strong>In person & online</span></div>
           <div><MapPin /><span><strong>Placerville, California</strong>1031 Thompson Way</span></div>
-          <div><Radio /><span><strong>Worship from anywhere</strong>Live on Facebook</span></div>
+          <div><Radio /><span><strong>Worship from anywhere</strong>Facebook & YouTube</span></div>
         </div>
       </section>
 
@@ -41,7 +51,7 @@ export default function Home() {
             <span className="eyebrow">Join us this Sunday</span>
             <h2>A place to breathe, belong, and become.</h2>
             <p className="lead">
-              Our joyful, thoughtful worship brings generations together through scripture, music, prayer, and an open table.
+              Our joyful, thoughtful worship brings generations together through scripture, music, prayer, and an open table. We offer Godly Play for children ages 5–5th grade and welcome all youth (grades 6–12) to join us for a variety of activities throughout the month.
             </p>
             <div className="service-facts">
               <div><CalendarDays /><span><b>Sunday worship</b>{church.worshipTime}</span></div>
@@ -74,10 +84,10 @@ export default function Home() {
             <span className="eyebrow">One church · Two traditions</span>
             <h2>Rooted in faith.<br />Growing toward justice.</h2>
             <p className="lead">
-              Federated Church is a rare shared congregation of the Presbyterian Church (U.S.A.) and The United Methodist Church—together since the 1920s.
+              Federated Church is a unique congregation of the Presbyterian Church (U.S.A.) and The United Methodist Church—together since the 1920s. We have had a worshipping presence in El Dorado County since 1851.
             </p>
             <p>
-              We are progressive Christians, spiritual seekers, longtime believers, and curious neighbors. People of every denominational identity, ability, age, ethnicity, gender identity, and sexual orientation are welcomed, included, and affirmed.
+              We are progressive Christians, spiritual seekers, longtime believers, and curious neighbors. We are active in mission here in our community and throughout the world. People of every denominational identity, ability, age, ethnicity, gender identity, immigration status, and sexual orientation are welcomed, included, and affirmed.
             </p>
             <div className="value-list">
               <span><HeartHandshake size={19} /> Radical hospitality</span>
@@ -122,31 +132,24 @@ export default function Home() {
             <h2>Come to the table from wherever you are.</h2>
             <p>Join live Sunday at 10:00 AM Pacific or watch past worship services any time. You are part of this community, even from a distance.</p>
             <div className="button-row">
-              <a className="button button-gold" href={church.facebook}><Radio size={17} /> Watch live</a>
-              <Link className="button button-ghost" href="/worship">Browse messages</Link>
+              <a className="button button-gold" href={church.facebook}><Radio size={17} /> Facebook Live</a>
+              <a className="button button-ghost" href={church.youtube}><Tv size={17} /> YouTube Channel</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="events-section section">
-        <div className="shell">
-          <div className="section-heading split-heading align-end">
-            <div><span className="eyebrow">Gather with us</span><h2>Upcoming at Federated</h2></div>
-            <a className="text-link" href="https://www.mychurchevents.com/calendar/73849641">View full calendar <ArrowRight size={16} /></a>
+      <section id="calendar" className="events-section section">
+        <div className="shell calendar-feature">
+          <div className="calendar-mark" aria-hidden="true"><CalendarDays /></div>
+          <div className="calendar-copy">
+            <span className="eyebrow">Gather with us</span>
+            <h2>See what’s happening at Federated.</h2>
+            <p>Event details change from week to week. Our live church calendar always has the current dates, times, and gathering information.</p>
           </div>
-          <div className="events-grid">
-            {events.map((event) => (
-              <article className="event-card" key={event.title + event.day}>
-                <div className="event-date"><span>{event.month}</span><b>{event.day}</b></div>
-                <div>
-                  <span className="event-time">{event.time}</span>
-                  <h3>{event.title}</h3>
-                  <p>{event.description}</p>
-                  <a href={`mailto:${church.email}?subject=${encodeURIComponent(event.title)}`}>Ask a question <ArrowRight size={15} /></a>
-                </div>
-              </article>
-            ))}
+          <div className="calendar-action">
+            <span><Clock3 size={18} /> Sunday worship remains at 10:00 AM</span>
+            <a className="button button-navy button-large" href={church.calendar}>View the live calendar <ArrowRight size={17} /></a>
           </div>
         </div>
       </section>

@@ -27,13 +27,13 @@ export default function WorshipPage() {
             <p className="lead">Whether you’re traveling, homebound, exploring, or joining from across the country, you are part of the congregation.</p>
             <div className="platform-links">
               <a href={church.facebook}><MessageCircle /><span><b>Facebook Live</b>Join the conversation</span><ArrowRight /></a>
-              <a href={church.youtube}><Tv /><span><b>YouTube</b>Watch the full archive</span><ArrowRight /></a>
+              <a href={church.youtube}><Tv /><span><b>Federated Church on YouTube</b>Watch live and browse the full archive</span><ArrowRight /></a>
             </div>
           </div>
         </div>
       </section>
       <section className="section section-warm">
-        <div className="shell section-heading split-heading align-end"><div><span className="eyebrow">Listen anytime</span><h2>Worship & messages</h2></div><a className="text-link" href={church.youtube}>Open YouTube archive <ArrowRight size={16} /></a></div>
+        <div className="shell section-heading split-heading align-end"><div><span className="eyebrow">Listen anytime</span><h2>Worship & messages</h2></div><a className="button button-navy" href={church.youtube}><Tv size={17} /> Visit our YouTube channel</a></div>
         <div className="shell archive-grid">
           {archive.map((item, index) => (
             <a className="archive-card" href={church.youtube} key={item.label}>

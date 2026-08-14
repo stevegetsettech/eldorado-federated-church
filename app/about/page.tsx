@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "About Us" };
 
 const staff = [
   { name: "Rev. Dr. Laura Barnes", role: "Senior Pastor", image: "/images/pastor-laura.jpg", text: "Pastor Laura brings more than 20 years of parish ministry, a passion for justice, and deep experience serving families affected by homelessness and disaster." },
-  { name: "Rev. Carrie Lane", role: "Parish Associate", image: "/images/carrie-lane.png", text: "Raised at Federated, Carrie supports pastoral care, visitation, worship, and the congregation’s ministry of connection and wellness." },
+  { name: "Rev. Carrie Lane", role: "Parish Associate", image: "/images/pastor-carrie-lane-2025.jpg", text: "Raised at Federated, Carrie supports pastoral care, visitation, worship, and the congregation’s ministry of connection and wellness." },
   { name: "Rebecca Monroe", role: "Director of Music Ministry", image: "/images/rebecca-monroe.jpg", text: "Rebecca leads the choir, handbells, praise band, children’s music, and concert series with joy and musical curiosity." },
   { name: "Cindi Runyon", role: "Director of Children & Youth Ministries", image: "/images/cindi-runyon.jpg", text: "Cindi brings decades of trauma-informed work with children and youth and a commitment to living Micah 6:8." },
   { name: "Jan Laird", role: "Office Manager", image: "/images/jan-laird.jpg", text: "Jan helps keep ministry moving and welcomes questions Tuesday through Friday, 9:00 AM–3:00 PM." },
@@ -48,7 +48,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section staff-section">
+      <section id="staff" className="section staff-section">
         <div className="shell section-heading split-heading"><div><span className="eyebrow">Our people</span><h2>Staff & pastoral leadership</h2></div><p>People who will learn your name, make space for your story, and help you find a way to participate.</p></div>
         <div className="shell staff-grid">
           {staff.map((person) => (

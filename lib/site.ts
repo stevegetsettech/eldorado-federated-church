@@ -7,35 +7,12 @@ export const church = {
   worshipTime: "10:00 AM",
   mapUrl:
     "https://www.google.com/maps/place/1031+Thompson+Way,+Placerville,+CA+95667/@38.7286751,-120.7967381,17z",
-  youtube: "https://www.youtube.com/channel/UCXACP_h8ENybRZA5dJMr4sQ/videos",
+  youtube: "https://www.youtube.com/@eldoradofederatedchurchpla3486",
   facebook: "https://www.facebook.com/FederatedChurchPlacerville",
+  calendar: "https://www.mychurchevents.com/calendar/73849641",
   giving:
     "https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?appver3=wWsk24ZWJSTZKsGd1RMKlg0BDvsSG3VIWQCPJNNxD8upkiY7JlDavDsozUE7KG0nFx2NSo8LdUKGuGuF396vbcNDxpvZcclfN1tJJlajnwciYnTg5dP4O6rpX5QvPEWlBhHDN59kLZFffwKfYERpQvRhOcSXCR-1tcv5rwegbfg%3D&ver=3",
 };
-
-export const events = [
-  {
-    month: "AUG",
-    day: "09",
-    title: "Sunday Worship",
-    time: "10:00 AM · Sanctuary & online",
-    description: "A joyful, multigenerational service with an open Communion table.",
-  },
-  {
-    month: "AUG",
-    day: "12",
-    title: "Chancel Choir Rehearsal",
-    time: "5:00 PM · Sanctuary",
-    description: "New voices are always welcome. Come sing, connect, and grow.",
-  },
-  {
-    month: "SEP",
-    day: "06",
-    title: "Coffeehouse Church",
-    time: "9:30 AM brunch · 10:00 AM worship",
-    description: "Brunch, family-style Communion, and informal worship in Price Hall.",
-  },
-];
 
 export const ministries = [
   {

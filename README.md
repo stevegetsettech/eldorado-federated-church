@@ -35,13 +35,13 @@ The most frequently changed content is intentionally kept in a few obvious place
 | What to update | File |
 | --- | --- |
 | Service time, address, phone, email, social links, giving link | `lib/site.ts` → `church` |
-| Home-page event cards | `lib/site.ts` → `events` |
+| Live calendar link | `lib/site.ts` → `church.calendar` |
 | Home-page ministry cards | `lib/site.ts` → `ministries` |
 | Staff names, roles, biographies, and photos | `app/about/page.tsx` → `staff` |
 | Page wording | The matching file under `app/` |
 | Photos | `public/images/` |
 
-Event dates in `lib/site.ts` are plain text. Keep the three event cards in chronological order and update them as often as the weekly e-bulletin.
+The home page links directly to the church’s live MyChurchEvents calendar. Staff can update events in the existing calendar as usual; there is no duplicate weekly website update.
 
 When replacing a photo, keep the same filename to avoid changing code. Use a landscape JPG for page banners and a portrait or square image for staff.
 
