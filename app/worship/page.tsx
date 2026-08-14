@@ -18,9 +18,15 @@ export default function WorshipPage() {
       <PageHero eyebrow="Worship & media" title="A living, spacious faith." description="Music, prayer, scripture, silence, and questions come together in worship that makes room for the whole person." image="/images/worship-children.jpg" />
       <section className="section livestream-section">
         <div className="shell livestream-grid">
-          <div className="video-frame">
-            <iframe title="Federated Church livestream" src="https://www.youtube.com/embed/live_stream?channel=UCXACP_h8ENybRZA5dJMr4sQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-          </div>
+          <a className="youtube-channel-panel" href={church.youtube} aria-label="Open the El Dorado County Federated Church YouTube channel">
+            <img src={asset("/images/worship-children.jpg")} alt="" />
+            <div>
+              <span className="youtube-channel-kicker"><Tv size={18} /> Federated Church on YouTube</span>
+              <h3>Worship, messages, and music.</h3>
+              <p>Watch Sunday worship and explore recent services directly on our YouTube channel.</p>
+              <span className="youtube-channel-link"><Play size={16} fill="currentColor" /> Open the YouTube channel <ArrowRight size={16} /></span>
+            </div>
+          </a>
           <div>
             <span className="live-pill"><span /> Live Sundays at 10:00 AM Pacific</span>
             <h2>Worship with us online.</h2>

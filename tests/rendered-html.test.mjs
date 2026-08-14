@@ -35,5 +35,8 @@ test("renders every core route", async () => {
   assert.match(await renderedHtml("about/index.html"), /pastor-carrie-lane-2025\.jpg/);
   assert.match(await renderedHtml("ministries/index.html"), /Board of Deacons/);
   assert.match(await renderedHtml("ministries/index.html"), /id="congregationalcare"/);
-  assert.match(await renderedHtml("worship/index.html"), /Visit our YouTube channel/);
+  const worshipHtml = await renderedHtml("worship/index.html");
+  assert.match(worshipHtml, /Open the YouTube channel/);
+  assert.match(worshipHtml, /youtube\.com\/@eldoradofederatedchurchpla3486/);
+  assert.doesNotMatch(worshipHtml, /youtube\.com\/embed/);
 });
