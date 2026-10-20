@@ -7,24 +7,24 @@ import { asset, church } from "@/lib/site";
 export const metadata: Metadata = { title: "Worship & Media" };
 
 const archive = [
-  { label: "Most recent", title: "Sunday Worship", type: "Full service", image: "/images/worship-children.jpg" },
-  { label: "Worship archive", title: "Messages for the journey", type: "Video collection", image: "/images/stained-glass.jpg" },
-  { label: "Music at Federated", title: "Make a joyful noise", type: "Worship & concerts", image: "/images/music-choir.jpg" },
+  { label: "Featured service", title: "Sunday Worship", type: "Full service", image: "/images/featured-worship-october-2026.jpg", href: church.featuredWorship },
+  { label: "Worship archive", title: "Messages for the journey", type: "Video collection", image: "/images/stained-glass.jpg", href: church.youtube },
+  { label: "Music at Federated", title: "Make a joyful noise", type: "Worship & concerts", image: "/images/music-choir.jpg", href: church.youtube },
 ];
 
 export default function WorshipPage() {
   return (
     <>
-      <PageHero eyebrow="Worship & media" title="A living, spacious faith." description="Music, prayer, scripture, silence, and questions come together in worship that makes room for the whole person." image="/images/worship-children.jpg" />
+      <PageHero eyebrow="Worship & media" title="A living, spacious faith." description="Music, prayer, scripture, silence, and questions come together in worship that makes room for the whole person." image="/images/church-rainbow-solar-october-2026.jpg" />
       <section className="section livestream-section">
         <div className="shell livestream-grid">
-          <a className="youtube-channel-panel" href={church.youtube} aria-label="Open the El Dorado County Federated Church YouTube channel">
-            <img src={asset("/images/worship-children.jpg")} alt="" />
+          <a className="youtube-channel-panel" href={church.featuredWorship} aria-label="Watch the featured Sunday worship service on YouTube">
+            <img src={asset("/images/featured-worship-october-2026.jpg")} alt="" />
             <div>
-              <span className="youtube-channel-kicker"><Tv size={18} /> Federated Church on YouTube</span>
-              <h3>Worship, messages, and music.</h3>
-              <p>Watch Sunday worship and explore recent services directly on our YouTube channel.</p>
-              <span className="youtube-channel-link"><Play size={16} fill="currentColor" /> Open the YouTube channel <ArrowRight size={16} /></span>
+              <span className="youtube-channel-kicker"><Tv size={18} /> Featured Sunday service</span>
+              <h3>Worship with Federated.</h3>
+              <p>Watch this complete Sunday worship service, featuring the church’s current worship leadership.</p>
+              <span className="youtube-channel-link"><Play size={16} fill="currentColor" /> Watch on YouTube <ArrowRight size={16} /></span>
             </div>
           </a>
           <div>
@@ -42,7 +42,7 @@ export default function WorshipPage() {
         <div className="shell section-heading split-heading align-end"><div><span className="eyebrow">Listen anytime</span><h2>Worship & messages</h2></div><a className="button button-navy" href={church.youtube}><Tv size={17} /> Visit our YouTube channel</a></div>
         <div className="shell archive-grid">
           {archive.map((item, index) => (
-            <a className="archive-card" href={church.youtube} key={item.label}>
+            <a className="archive-card" href={item.href} key={item.label}>
               <div className="archive-image"><img src={asset(item.image)} alt="" /><span>{index === 2 ? <Headphones /> : <Play fill="currentColor" />}</span></div>
               <div><small>{item.label}</small><h3>{item.title}</h3><p>{item.type}</p></div>
             </a>

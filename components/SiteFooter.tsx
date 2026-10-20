@@ -38,6 +38,8 @@ export function SiteFooter() {
             <li><Link href="/about">Our Story & Staff</Link></li>
             <li><Link href="/ministries">Ministries</Link></li>
             <li><Link href="/worship">Watch Worship</Link></li>
+            <li><a href={church.calendar}>Church Calendar</a></li>
+            <li><Link href={church.prayerRequests}>Prayer Requests</Link></li>
             <li><Link href="/give">Give Online</Link></li>
           </ul>
         </div>

@@ -8,8 +8,13 @@ export const church = {
   mapUrl:
     "https://www.google.com/maps/place/1031+Thompson+Way,+Placerville,+CA+95667/@38.7286751,-120.7967381,17z",
   youtube: "https://www.youtube.com/@eldoradofederatedchurchpla3486",
+  featuredWorship: "https://www.youtube.com/watch?v=wiLO430AhwY",
   facebook: "https://www.facebook.com/FederatedChurchPlacerville",
   calendar: "https://www.mychurchevents.com/calendar/73849641",
+  prayerRequests: "/praise-and-prayer-requests",
+  musicEmail: "Federatedmusic@eldoradofederatedchurch.org",
+  childrenYouthEmail: "Federatedcym@eldoradofederatedchurch.org",
+  missionGuide: "/documents/mission-a-to-z-guide-september-2026.pdf",
   giving:
     "https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?appver3=wWsk24ZWJSTZKsGd1RMKlg0BDvsSG3VIWQCPJNNxD8upkiY7JlDavDsozUE7KG0nFx2NSo8LdUKGuGuF396vbcNDxpvZcclfN1tJJlajnwciYnTg5dP4O6rpX5QvPEWlBhHDN59kLZFffwKfYERpQvRhOcSXCR-1tcv5rwegbfg%3D&ver=3",
 };

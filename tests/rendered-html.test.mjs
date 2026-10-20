@@ -17,7 +17,11 @@ test("renders the church home page", async () => {
   assert.match(html, /Environmental justice/);
   assert.match(html, /immigration status/);
   assert.match(html, /youtube\.com\/@eldoradofederatedchurchpla3486/);
+  assert.match(html, /youtube\.com\/watch\?v=wiLO430AhwY/);
   assert.match(html, /View the live calendar/);
+  assert.match(html, /Church Calendar/);
+  assert.match(html, /Prayer Request/);
+  assert.match(html, /church-rainbow-solar-october-2026\.jpg/);
   assert.match(html, /noindex/);
 });
 
@@ -28,6 +32,7 @@ test("renders every core route", async () => {
     ["ministries/index.html", /Love takes shape here/],
     ["worship/index.html", /Worship with us online/],
     ["give/index.html", /Your generosity becomes care/],
+    ["praise-and-prayer-requests/index.html", /How may we pray with you/],
   ]) {
     assert.match(await renderedHtml(path), expected, path);
   }
@@ -35,8 +40,13 @@ test("renders every core route", async () => {
   assert.match(await renderedHtml("about/index.html"), /pastor-carrie-lane-2025\.jpg/);
   assert.match(await renderedHtml("ministries/index.html"), /Board of Deacons/);
   assert.match(await renderedHtml("ministries/index.html"), /id="congregationalcare"/);
+  assert.match(await renderedHtml("ministries/index.html"), /mission-a-to-z-guide-september-2026\.pdf/);
+  assert.match(await renderedHtml("ministries/index.html"), /Federatedmusic@eldoradofederatedchurch\.org/);
+  assert.match(await renderedHtml("ministries/index.html"), /Federatedcym@eldoradofederatedchurch\.org/);
   const worshipHtml = await renderedHtml("worship/index.html");
-  assert.match(worshipHtml, /Open the YouTube channel/);
+  assert.match(worshipHtml, /Watch on YouTube/);
   assert.match(worshipHtml, /youtube\.com\/@eldoradofederatedchurchpla3486/);
+  assert.match(worshipHtml, /youtube\.com\/watch\?v=wiLO430AhwY/);
+  assert.match(worshipHtml, /featured-worship-october-2026\.jpg/);
   assert.doesNotMatch(worshipHtml, /youtube\.com\/embed/);
 });

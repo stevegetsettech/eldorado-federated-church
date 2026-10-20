@@ -3,6 +3,7 @@ import {
   ArrowRight,
   CalendarDays,
   Clock3,
+  HandHeart,
   HeartHandshake,
   Leaf,
   MapPin,
@@ -18,8 +19,7 @@ export default function Home() {
     <>
       <section className="home-hero">
         <picture className="home-hero-visual">
-          <source media="(max-width: 820px)" srcSet={asset("/images/church-rainbow-solar-portrait.jpg")} />
-          <img src={asset("/images/church-rainbow-solar.jpg")} alt="Federated Church with its rainbow welcome mural and rooftop solar panels" />
+          <img src={asset("/images/church-rainbow-solar-october-2026.jpg")} alt="Federated Church with its rainbow welcome mural and rooftop solar panels" />
         </picture>
         <div className="home-hero-overlay" />
         <div className="shell hero-content">
@@ -42,6 +42,25 @@ export default function Home() {
           <div><Clock3 /><span><strong>Sundays at 10:00 AM</strong>In person & online</span></div>
           <div><MapPin /><span><strong>Placerville, California</strong>1031 Thompson Way</span></div>
           <div><Radio /><span><strong>Worship from anywhere</strong>Facebook & YouTube</span></div>
+        </div>
+      </section>
+
+      <section className="home-access" aria-label="Church resources">
+        <div className="shell home-access-grid">
+          <div className="home-access-intro">
+            <span className="eyebrow">Quick access</span>
+            <h2>Stay connected through the week.</h2>
+          </div>
+          <a className="home-access-link" href={church.calendar} target="_blank" rel="noreferrer">
+            <CalendarDays />
+            <span><b>Church Calendar</b>Find current dates, times, and event details.</span>
+            <ArrowRight />
+          </a>
+          <Link className="home-access-link" href={church.prayerRequests}>
+            <HandHeart />
+            <span><b>Prayer Request</b>Share a concern or a joy with our church community.</span>
+            <ArrowRight />
+          </Link>
         </div>
       </section>
 
@@ -123,9 +142,9 @@ export default function Home() {
 
       <section className="media-feature section-dark">
         <div className="shell media-grid">
-          <div className="media-image" style={{ backgroundImage: `url(${asset("/images/worship-children.jpg")})` }}>
-            <a href={church.youtube} className="play-button" aria-label="Watch worship on YouTube"><Play fill="currentColor" /></a>
-            <span>Sunday worship · Latest service</span>
+          <div className="media-image" style={{ backgroundImage: `url(${asset("/images/featured-worship-october-2026.jpg")})` }}>
+            <a href={church.featuredWorship} className="play-button" aria-label="Watch the featured Sunday worship service on YouTube"><Play fill="currentColor" /></a>
+            <span>Sunday worship · Featured service</span>
           </div>
           <div className="media-copy">
             <span className="eyebrow eyebrow-gold">Worship with us</span>

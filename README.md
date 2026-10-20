@@ -8,7 +8,8 @@ A modern, responsive website for El Dorado County Federated Church in Placervill
 - New Here?: Sunday expectations, children, Communion, parking, and accessibility
 - About: dual-denomination history, values, and staff directory
 - Ministries: children and youth, community care, justice, music, learning, and pastoral care
-- Worship & Media: livestream player and video archive links
+- Worship & Media: featured worship service, livestream, and video archive links
+- Praise & Prayer Requests: a guided request form that opens the visitor’s email app
 - Giving: recurring, one-time, special mission, and legacy giving information
 
 ## Run the site locally
@@ -36,12 +37,15 @@ The most frequently changed content is intentionally kept in a few obvious place
 | --- | --- |
 | Service time, address, phone, email, social links, giving link | `lib/site.ts` → `church` |
 | Live calendar link | `lib/site.ts` → `church.calendar` |
+| Featured Sunday worship video | `lib/site.ts` → `church.featuredWorship` |
+| Music and children/youth contact emails | `lib/site.ts` → `church.musicEmail` and `church.childrenYouthEmail` |
+| Mission A–Z Guide | Replace `public/documents/mission-a-to-z-guide-september-2026.pdf` |
 | Home-page ministry cards | `lib/site.ts` → `ministries` |
 | Staff names, roles, biographies, and photos | `app/about/page.tsx` → `staff` |
 | Page wording | The matching file under `app/` |
 | Photos | `public/images/` |
 
-The home page links directly to the church’s live MyChurchEvents calendar. Staff can update events in the existing calendar as usual; there is no duplicate weekly website update.
+The home page links directly to the church’s live MyChurchEvents calendar. Staff can update events in the existing calendar as usual; there is no duplicate weekly website update. The prayer-request form prepares an email to the main church address; change `church.email` in `lib/site.ts` if prayer requests should go to a different inbox.
 
 When replacing a photo, keep the same filename to avoid changing code. Use a landscape JPG for page banners and a portrait or square image for staff.
 
