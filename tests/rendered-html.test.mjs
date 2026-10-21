@@ -49,4 +49,12 @@ test("renders every core route", async () => {
   assert.match(worshipHtml, /youtube\.com\/watch\?v=wiLO430AhwY/);
   assert.match(worshipHtml, /featured-worship-october-2026\.jpg/);
   assert.doesNotMatch(worshipHtml, /youtube\.com\/embed/);
+
+  const givingHtml = await renderedHtml("give/index.html");
+  assert.match(givingHtml, /secure\.myvanco\.com\/L-ZE80\/home/);
+  assert.match(givingHtml, /paypal\.com\/donate\/\?hosted_button_id=AFU958AL3NZW2/);
+  assert.match(givingHtml, /paypal-giving-qr\.png/);
+  assert.match(givingHtml, /Use this donation for/);
+  assert.doesNotMatch(givingHtml, /Pastor(?:’|')s (?:Search|Discretionary) Fund/i);
+  assert.doesNotMatch(givingHtml, /eservicepayments\.com/);
 });

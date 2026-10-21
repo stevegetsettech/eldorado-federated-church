@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ArrowRight, Check, HandCoins, Heart, LockKeyhole, Repeat2, Sprout } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Check, HandCoins, Heart, LockKeyhole, QrCode, Repeat2, Sprout } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { church } from "@/lib/site";
 
@@ -16,13 +17,12 @@ export default function GivePage() {
             <h2>A simple, secure way to share.</h2>
             <p className="lead">Make a one-time gift, set up recurring giving, fulfill a pledge, or support a special mission fund through our established giving partner.</p>
             <ul className="check-list">
-              <li><Check /> General ministry & annual pledges</li>
-              <li><Check /> Recurring weekly or monthly gifts</li>
-              <li><Check /> SHARE food ministry & Housing El Dorado</li>
-              <li><Check /> Pastor’s discretionary fund & special missions</li>
+              <li><Check /> One-time or recurring gifts through Vanco</li>
+              <li><Check /> General and pledged giving through PayPal</li>
+              <li><Check /> Designated ministries selected in PayPal</li>
             </ul>
-            <a className="button button-gold button-large" href={church.giving}>Give securely online <ArrowRight size={18} /></a>
-            <p className="secure-note"><LockKeyhole size={15} /> You’ll continue to the church’s secure Presbyterian Foundation giving form.</p>
+            <a className="button button-gold button-large" href={church.giving} target="_blank" rel="noreferrer">Give securely with Vanco <ArrowRight size={18} /></a>
+            <p className="secure-note"><LockKeyhole size={15} /> You’ll continue to Federated Church’s secure Vanco giving page.</p>
           </div>
           <div className="impact-card">
             <span className="eyebrow eyebrow-gold">Why we give</span>
@@ -34,11 +34,35 @@ export default function GivePage() {
         </div>
       </section>
       <section className="section section-warm">
-        <div className="shell narrow-heading center"><span className="eyebrow">Ways to give</span><h2>Choose what fits your intention.</h2></div>
-        <div className="shell give-options">
-          <article><Repeat2 /><h3>Recurring giving</h3><p>Create a steady rhythm of support and update your gift through your online profile at any time.</p></article>
-          <article><Heart /><h3>Special missions</h3><p>Direct a gift to food access, housing, disaster response, peace and justice, or pastoral care.</p></article>
-          <article><Sprout /><h3>Legacy giving</h3><p>Include Federated Church in your estate plan to sustain welcome and service for future generations.</p></article>
+        <div className="shell narrow-heading center"><span className="eyebrow">Online giving</span><h2>Choose the giving option that works for you.</h2></div>
+        <div className="shell giving-methods">
+          <article className="giving-method">
+            <div className="giving-method-icon"><Repeat2 /></div>
+            <span className="eyebrow">Vanco eGiving</span>
+            <h3>One-time or recurring gifts</h3>
+            <p>Use Vanco for a single gift or to establish a dependable weekly or monthly giving schedule.</p>
+            <a className="button button-navy" href={church.giving} target="_blank" rel="noreferrer">Open Vanco <ArrowRight size={17} /></a>
+          </article>
+          <article className="giving-method giving-method-paypal">
+            <div className="giving-method-copy">
+              <div className="giving-method-icon"><Heart /></div>
+              <span className="eyebrow">PayPal donations</span>
+              <h3>Select the fund for your gift</h3>
+              <p>PayPal’s <strong>“Use this donation for”</strong> menu lets you choose the purpose of your gift. That selection stays with the donation so the finance team knows where it belongs.</p>
+              <a className="button button-gold" href={church.paypalGiving} target="_blank" rel="noreferrer">Donate with PayPal <ArrowRight size={17} /></a>
+            </div>
+            <div className="giving-qr">
+              <QrCode aria-hidden="true" />
+              <Image src="/images/paypal-giving-qr.png" width={208} height={208} alt="QR code for El Dorado County Federated Church PayPal giving" />
+              <p>Scan to open PayPal</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section className="section legacy-giving">
+        <div className="shell legacy-giving-inner">
+          <Sprout />
+          <div><span className="eyebrow">Legacy giving</span><h2>A gift that carries welcome forward.</h2><p>Including Federated Church in your estate plan can sustain worship, care, and community service for future generations.</p></div>
         </div>
       </section>
       <section className="giving-help section-dark">

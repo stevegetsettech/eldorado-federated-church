@@ -15,8 +15,8 @@ export const church = {
   musicEmail: "Federatedmusic@eldoradofederatedchurch.org",
   childrenYouthEmail: "Federatedcym@eldoradofederatedchurch.org",
   missionGuide: "/documents/mission-a-to-z-guide-september-2026.pdf",
-  giving:
-    "https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?appver3=wWsk24ZWJSTZKsGd1RMKlg0BDvsSG3VIWQCPJNNxD8upkiY7JlDavDsozUE7KG0nFx2NSo8LdUKGuGuF396vbcNDxpvZcclfN1tJJlajnwciYnTg5dP4O6rpX5QvPEWlBhHDN59kLZFffwKfYERpQvRhOcSXCR-1tcv5rwegbfg%3D&ver=3",
+  giving: "https://secure.myvanco.com/L-ZE80/home",
+  paypalGiving: "https://www.paypal.com/donate/?hosted_button_id=AFU958AL3NZW2",
 };
 
 export const ministries = [

@@ -311,10 +311,25 @@ p { color: var(--muted); }
 .impact-card blockquote { margin: 12px 0 6px; color: #fff; font-family: var(--serif); font-size: 2.5rem; line-height: 1.15; }
 .impact-card > p { color: #cbd7dc; }
 .impact-card hr { border: 0; border-top: 1px solid rgba(255,255,255,.16); margin: 28px 0; }
-.give-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.give-options article { background: #fff; padding: 35px 30px; }
-.give-options svg { color: var(--burgundy); margin-bottom: 23px; }
-.give-options p { margin-bottom: 0; font-size: .88rem; }
+.giving-methods { display: grid; grid-template-columns: .72fr 1.28fr; gap: 20px; align-items: stretch; }
+.giving-method { background: #fff; padding: 40px 36px; border-top: 4px solid var(--gold); box-shadow: 0 15px 42px rgba(19,42,58,.08); }
+.giving-method h3 { font-size: 2rem; }
+.giving-method p { font-size: .9rem; }
+.giving-method-icon { width: 48px; height: 48px; display: grid; place-items: center; margin-bottom: 25px; background: var(--cream); color: var(--burgundy); }
+.giving-method-paypal { display: grid; grid-template-columns: 1fr 228px; gap: 34px; align-items: center; background: var(--navy-deep); border-top-color: var(--burgundy); }
+.giving-method-paypal h3 { color: #fff; }
+.giving-method-paypal p { color: #ced8dd; }
+.giving-method-paypal p strong { color: #fff; }
+.giving-method-paypal .giving-method-icon { background: rgba(255,255,255,.1); color: var(--gold-light); }
+.giving-qr { display: grid; justify-items: center; padding: 18px; background: #fff; }
+.giving-qr > svg { width: 22px; color: var(--burgundy); margin-bottom: 10px; }
+.giving-qr img { width: 100%; height: auto; image-rendering: pixelated; }
+.giving-qr p { margin: 8px 0 0; color: var(--navy); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.legacy-giving { padding-block: 82px; }
+.legacy-giving-inner { display: grid; grid-template-columns: 65px 1fr; gap: 28px; align-items: start; max-width: 900px; }
+.legacy-giving-inner > svg { width: 50px; height: 50px; color: var(--burgundy); }
+.legacy-giving h2 { font-size: clamp(2.3rem, 4vw, 3.8rem); margin-bottom: 12px; }
+.legacy-giving p { max-width: 720px; margin-bottom: 0; }
 .giving-help { padding: 70px 0; }
 .giving-help .shell { display: grid; grid-template-columns: 60px 1fr auto; gap: 28px; align-items: center; }
 .giving-help .shell > svg { color: var(--gold-light); width: 48px; height: 48px; }
@@ -372,7 +387,7 @@ p { color: var(--muted); }
   .map-card iframe { height: 320px; }
   .identity-grid { gap: 60px; }
   .split-heading { grid-template-columns: 1fr; gap: 20px; }
-  .archive-grid, .give-options { grid-template-columns: 1fr; }
+  .archive-grid, .giving-methods { grid-template-columns: 1fr; }
   .calendar-feature { grid-template-columns: 80px 1fr; gap: 28px; padding: 45px 38px; }
   .calendar-mark { width: 80px; height: 96px; }
   .calendar-copy h2 { font-size: 3.3rem; }
@@ -450,6 +465,10 @@ p { color: var(--muted); }
   .prayer-form .button { width: 100%; }
   .impact-card { padding: 39px 28px; }
   .impact-card blockquote { font-size: 2.15rem; }
+  .giving-method { padding: 34px 27px; }
+  .giving-method-paypal { grid-template-columns: 1fr; }
+  .giving-qr { width: min(100%, 260px); justify-self: start; }
+  .legacy-giving-inner { grid-template-columns: 1fr; gap: 18px; }
   .giving-help .shell { grid-template-columns: 1fr; }
   .giving-help .button { grid-column: 1; }
   .footer-main { grid-template-columns: 1fr; padding: 65px 0 50px; }
