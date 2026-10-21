@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowRight, Check, HandCoins, Heart, LockKeyhole, QrCode, Repeat2, Sprout } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import { church } from "@/lib/site";
+import { asset, church } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Giving & Stewardship" };
 
@@ -53,7 +53,7 @@ export default function GivePage() {
             </div>
             <div className="giving-qr">
               <QrCode aria-hidden="true" />
-              <Image src="/images/paypal-giving-qr.png" width={208} height={208} alt="QR code for El Dorado County Federated Church PayPal giving" />
+              <Image src={asset("/images/paypal-giving-qr.png")} width={208} height={208} alt="QR code for El Dorado County Federated Church PayPal giving" />
               <p>Scan to open PayPal</p>
             </div>
           </article>
