@@ -32,7 +32,9 @@ The wildcard `*` record is intentionally unchanged. Microsoft 365 MX, SPF, DMARC
 - GitHub Pages production deployment `45214518761` completed successfully.
 - The root domain redirects to `www.eldoradofederatedchurch.org` and GitHub serves the production site there.
 - GitHub reports both domains as valid, served by Pages, and eligible for HTTPS.
-- As of November 23, 2026 at 8:57 AM PST, GitHub's HTTPS certificate was still provisioning, so HTTPS enforcement could not yet be enabled.
+- GitHub's stalled certificate request was restarted by removing and immediately restoring the custom-domain setting.
+- Let's Encrypt issued a certificate covering both `eldoradofederatedchurch.org` and `www.eldoradofederatedchurch.org`, valid through February 21, 2027.
+- HTTPS enforcement is enabled in GitHub Pages, and all production pages pass HTTPS verification.
 
 ## Rollback
 
