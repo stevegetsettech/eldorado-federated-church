@@ -22,7 +22,8 @@ test("renders the church home page", async () => {
   assert.match(html, /Church Calendar/);
   assert.match(html, /Prayer Request/);
   assert.match(html, /church-rainbow-solar-october-2026\.jpg/);
-  assert.match(html, /noindex/);
+  assert.match(html, /index, follow/);
+  assert.doesNotMatch(html, /noindex/);
 });
 
 test("renders every core route", async () => {
@@ -57,4 +58,13 @@ test("renders every core route", async () => {
   assert.match(givingHtml, /Use this donation for/);
   assert.doesNotMatch(givingHtml, /Pastor(?:’|')s (?:Search|Discretionary) Fund/i);
   assert.doesNotMatch(givingHtml, /eservicepayments\.com/);
+});
+
+test("publishes production search metadata", async () => {
+  const robots = await readFile(new URL("robots.txt", outputRoot), "utf8");
+  const sitemap = await readFile(new URL("sitemap.xml", outputRoot), "utf8");
+
+  assert.match(robots, /Allow: \//);
+  assert.match(robots, /https:\/\/www\.eldoradofederatedchurch\.org\/sitemap\.xml/);
+  assert.match(sitemap, /https:\/\/www\.eldoradofederatedchurch\.org\/praise-and-prayer-requests/);
 });

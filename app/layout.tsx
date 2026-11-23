@@ -14,13 +14,11 @@ export const metadata: Metadata = {
   description:
     "A progressive Presbyterian (PCUSA) and United Methodist congregation in Placerville practicing love, compassion, justice, and radical hospitality.",
   robots: {
-    index: false,
-    follow: false,
-    nocache: true,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
+      index: true,
+      follow: true,
     },
   },
   icons: {

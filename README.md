@@ -61,36 +61,24 @@ When replacing a photo, keep the same filename to avoid changing code. Use a lan
 
 3. In GitHub, open **Settings → Pages**.
 4. Under **Build and deployment**, choose **GitHub Actions** as the source.
-5. Open the **Actions** tab and confirm “Deploy staging preview” completed successfully.
+5. Open the **Actions** tab and confirm “Deploy production website” completed successfully.
 
-The preview will be available at:
+The live website is available at:
 
-`https://YOUR-ORGANIZATION.github.io/eldorado-federated-church/`
+`https://www.eldoradofederatedchurch.org/`
 
-Every push to `main` automatically rebuilds and republishes the staging site through `.github/workflows/deploy.yml`.
-
-### Password-protected board preview
-
-The deployment workflow encrypts every HTML page before publishing it. The password is stored only as the GitHub Actions secret `PREVIEW_PASSWORD`; it is not committed to the repository.
-
-To set or rotate the review password:
-
-```bash
-gh secret set PREVIEW_PASSWORD
-```
-
-Use a unique password of at least 16 characters. Changing the secret and rerunning the deployment workflow replaces the encrypted preview with the new password.
+Every push to `main` automatically rebuilds and republishes the production site through `.github/workflows/deploy.yml`.
 
 ## Final domain launch
 
-Keep the GitHub Pages address as the board-review staging URL until content is approved. For final launch:
+The production website uses GitHub Pages with `www.eldoradofederatedchurch.org` as its custom domain:
 
-1. In **Settings → Pages**, add `www.eldoradofederatedchurch.org` as the custom domain.
-2. GitHub will show the exact DNS records to add at the church’s domain provider.
-3. Make the DNS change only after the board approves the staging site.
-4. Turn on **Enforce HTTPS** after GitHub confirms the domain.
+1. The `www` CNAME points to `stevegetsettech.github.io`.
+2. The apex domain uses GitHub Pages A records and redirects to `www`.
+3. Microsoft 365 MX and mail-security DNS records remain at the domain provider.
+4. GitHub Pages enforces HTTPS after certificate provisioning completes.
 
-Do not remove the current website or change DNS during review. The existing website remains live until the custom domain is connected.
+Do not change nameservers or MX records during website maintenance.
 
 ## Content verification before launch
 
@@ -108,4 +96,4 @@ The first version uses information and photography from the church’s current w
 - Next.js with TypeScript
 - Responsive CSS with accessible navigation and reduced-motion support
 - Lucide icons
-- Encrypted GitHub Pages preview for board review
+- GitHub Pages production hosting with automatic deployment
